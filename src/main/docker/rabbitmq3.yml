@@ -4,7 +4,6 @@ services:
     image: rabbitmq:3-management
     environment:
       RABBITMQ_ERLANG_COOKIE: 'secret cookie here'
-#    volumes:
-#      - ./db.data:/var/lib/rabbitmq
     ports:
+      - 5672:5672
       - 15672:15672

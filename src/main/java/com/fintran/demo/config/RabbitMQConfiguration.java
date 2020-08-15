@@ -1,6 +1,6 @@
 package com.fintran.demo.config;
 
-import com.fintran.demo.service.ReceiverMessageHandler;
+import com.fintran.demo.service.MessageReceiveHandler;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.Queue;
@@ -41,7 +41,7 @@ public class RabbitMQConfiguration {
     }
 
     @Bean
-    MessageListenerAdapter listenerAdapter(ReceiverMessageHandler receiver) {
+    MessageListenerAdapter listenerAdapter(MessageReceiveHandler receiver) {
         return new MessageListenerAdapter(receiver, "handleMessage");
     }
 }
