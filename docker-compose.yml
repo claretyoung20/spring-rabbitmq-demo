@@ -1,14 +1,16 @@
-version: '3.7'
+version: "3"
+
 services:
-  demo-app:
-    image: claretyoung/spring-rabbitmq-demo:latest
-    build: .
-    ports:
-      - 8080:8080
   rabbitmq3:
     image: rabbitmq:3-management
-    environment:
-      RABBITMQ_ERLANG_COOKIE: 'secret cookie here'
     ports:
       - 5672:5672
       - 15672:15672
+  app-container:
+    build: .
+    ports:
+      - 8080:8080
+    environment:
+      - SPRING_RABBITMQ_HOST=rabbitmq3
+    depends_on:
+      - rabbitmq3
