@@ -16,17 +16,4 @@ public class TransactionDTO implements Serializable {
     private String senderPersonName;
     private String transactionType;
 
-
-    @Override
-    public String toString() {
-        return "TransactionDTO{" +
-                "transactionId=" + transactionId +
-                ", amount=" + amount +
-                ", status=" + status +
-                ", transactionDate=" + transactionDate +
-                ", description='" + description + '\'' +
-                ", senderPersonName='" + senderPersonName + '\'' +
-                ", transactionType='" + transactionType + '\'' +
-                '}';
-    }
 }
