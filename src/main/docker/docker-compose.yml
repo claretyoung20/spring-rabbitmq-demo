@@ -1,5 +1,10 @@
 version: '3.7'
 services:
+  demo-app:
+    image: claretyoung/spring-rabbitmq-demo:latest
+    build: .
+    ports:
+      - 8080:8080
   rabbitmq3:
     image: rabbitmq:3-management
     environment:
