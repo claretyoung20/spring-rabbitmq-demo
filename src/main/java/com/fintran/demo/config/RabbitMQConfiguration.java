@@ -17,12 +17,12 @@ public class RabbitMQConfiguration {
 
     @Bean
     Queue queue() {
-        return new Queue(Constants.QUEUE_NAME, false);
+        return new Queue(Constants.QUEUE_NAME, true, false, false);
     }
 
     @Bean
     TopicExchange exchange() {
-        return new TopicExchange(Constants.TOPIC_EXCHANGE_NAME);
+        return new TopicExchange(Constants.TOPIC_EXCHANGE_NAME, true, false);
     }
 
     @Bean
